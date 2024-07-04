@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Chethan</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #121212;
+        }
+        .bg {
+            background-image: url('https://res.cloudinary.com/dl8dmkhmv/image/upload/v1719831238/302-3025158_hacker-hack-hacking-internet-computer-anarchy-poster-anonymous_zawaoe.jpg');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            filter: brightness(0.8);
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .nav-bar a:hover {
+            color: #ffcc00;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .home-text {
+            max-width: 600px;
+            text-align: left;
+        }
+        .profile-pic {
+            margin-left: 20px;
+        }
+        .profile-pic img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+            animation: light-effect 2s infinite;
+        }
+        @keyframes light-effect {
+            0% {
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+        }
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        .card {
+            min-width: 300px;
+            margin: 0 10px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            color: #000;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+        .card .stars {
+            color: #f5b301;
+            margin: 10px 0;
+        }
+        .card .buttons {
+            margin: 10px 0;
+        }
+        .card button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card button.about {
+            background-color: #00bcd4;
+            color: white;
+        }
+        .card button.hire {
+            background-color: #333;
+            color: white;
+        }
+        .card button:hover {
+            background-color: #005f6a;
+        }
+        .contact-section {
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+        }
+        .contact-section h2 {
+            margin-bottom: 20px;
+            color: #00bcd4;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 48%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form textarea {
+            width: 100%;
+            height: 100px;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #00bcd4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #005f6a;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .slider-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .slider-button.prev {
+            left: 10px;
+        }
+        .slider-button.next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="#">ROYAL OF ILLEGAL</a>
+            </div>
+            <div class="nav-links">
+                <a href="#home">HOME</a>
+                <a href="#projects">PROJECTS</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#about-me">ABOUT ME</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+        </div>
+        <div class="container">
+            <div id="home" class="section home-content">
+                <div class="home-text">
+                    <h1>Hi! I Am <span>CHETHAN_ROYALSTAR</span></h1>
+                    <h2>Web Developer, H43K3R.</h2>
+                    <p>𝕶ค𝖑𝔎𝖎 ᴛђ𝖊 ໓ค𝖗𝔎ຟค𝖗.</p>
+                    <div class="buttons">
+                        <a href="#contact" class="btn">Hire Me</a>
+                        <a href="#projects" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="profile-pic">
+                    <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720065209/IMG_20240515_080836_nr89j0.jpg" alt="Profile Picture">
+                </div>
+            </div>
+            <div id="projects" class="section">
+                <h2>Projects</h2>
+                <p>SOON UPLOAD PROJECTS COMING SOON.</p>
+            </div>
+            <div id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720064959/IMG_20240628_081042_107_zyxtii.jpg" alt="Profile Picture">
+                            <h3>ROYAL_OF_ILLEGAL</h3>
+                            <p>Web Developer, H43K3R</p>
+                            <div class="stars">★★★★☆</div>
+                            <div class="buttons">
+                                <button class="about">About Me</button>
+                                <button class="hire">Hire Me</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720064959/preview_o2hy5e.jpg" alt="Profile Picture">
+                            <h3>ROYAL_OF_LEGAL</h3>
+                            <p>YouTuber</p>
+                            <div class="stars">★★★★☆</div>
+                            <div class="buttons">
+                                <button class="about">About Me</button>
+                                <button class="hire">Hire Me</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dl8dmkhmv/image/upload/v1720064958/IMG_20240424_180010_194_qttnmg.jpg" alt="Profile Picture">
+                            <h3>KALKI_THE_DARKWAR</h3>
+                            <p>Gamer</p>
+                            <div class="stars">★★★★☆</div>
+                            <div class="buttons">
+                                <button class="about">About Me</button>
+                                <button class="hire">Hire Me</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-button prev">◀</button>
+                    <button class="slider-button next">▶</button>
+                </div>
+            </div>
+            <div id="about-me" class="section">
+                <h2>About Me</h2>
+                <p>Write something about yourself SOON UPLOAD.</p>
+            </div>
+            <div id="contact" class="section">
+                <h2>Contact</h2>
+                <div class="contact-section">
+                    <h2>Contact Me!</h2>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Mobile Number" required>
+                        <input type="text" placeholder="Email Subject" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.slider');
+            const cards = document.querySelectorAll('.card');
+            const prevButton = document.querySelector('.slider-button.prev');
+            const nextButton = document.querySelector('.slider-button.next');
+            const cardWidth = cards[0].offsetWidth + 20; // Card width + margin
+
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const totalCards = cards.length;
+                if (index >= totalCards) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalCards - 1;
+                } else {
+                    currentIndex = index;
+                }
+                slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            }
+
+            prevButton.addEventListener('click', () => {
+                showSlide(currentIndex - 1);
+            });
+
+            nextButton.addEventListener('click', () => {
+                showSlide(currentIndex + 1);
+            });
+
+            showSlide(currentIndex);
+        });
+    </script>
+</body>
+</html>
